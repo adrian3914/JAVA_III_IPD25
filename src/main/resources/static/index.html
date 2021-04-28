@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>You first Spring application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<p><a href="/hello">Greet the world!</a></p>
+
+<form action="/hello" method="GET" id="nameForm">
+    <div>
+        <label for="nameField">How should the app call you?</label>
+        <input name="myName" id="nameField">
+        <button>Greet me!</button>
+    </div>
+</form>
+<!-- New  Form to add customer -->
+<form action="/add" method="POST">
+    <p>Let's add a customer.</p>
+    <div>
+        <label for="firstName">First name:</label>
+        <input name="first" id="firstName" value="" placeholder="Your Name">
+    </div>
+    <div>
+        <label for="Age">Age:</label>
+        <input name="age" id="Age" value="0">
+    </div>
+    <div>
+        <button>Add customer</button>
+    </div>
+</form>
+
+<form action="/list" method="GET">
+    <button>List customer</button>
+</form>
+
+<h4>Change Customer Name</h4>
+<form action="/updateCustomerName" method="GET">
+
+    <!-- to get out field values => parameters in method at Spring Controller -->
+    <!-- id -->
+    <div>
+        <label for="id">ID:</label>
+        <input name="id" id="id">
+    </div>
+
+    <!-- newName -->
+    <div>
+        <label for="newName">New Name</label><br>
+        <input name="newName" id="newName"><br> <!-- name attribute of input element MUST match parameter identifier -->
+    </div>
+    <br>
+    <button>Change Customer Name by Id</button>
+</form>
+
+
+<form action="/addPurchase" method="GET">
+
+
+    <div>
+        <h4>New Purchase To Customer</h4>
+        <label for="theCustomerId">Id of customer:</label>
+        <input type="" name="customerId" id="theCustomerId" value="" placeholder="Identification Number">
+    </div>
+    <div>
+        <label for="theItem">Item description:</label>
+        <input name="item" id="theItem" value="" placeholder="Iphone, Laptop, ...">
+    </div>
+    <div>
+        <label for="theAmount">Purchase amount:</label>
+        <input name="amount" id="theAmount" value="" placeholder="amount">
+    </div>
+    <div>
+        <button>Add purchase to customer</button>
+    </div>
+</form>
+
+</body>
+</html>
+
+
